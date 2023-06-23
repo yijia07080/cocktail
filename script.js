@@ -390,6 +390,21 @@ function initAttr() {
 }
 
 function checkOrientation() {
+    var width = $('#root').width();
+    var height = $('#root').height();
+    var outerWidth = $('#root').outerWidth();
+    var outerHeight = $('#root').outerHeight();
+    var windowWidth = window.innerWidth;
+    var windowHeight = window.innerHeight;
+
+    // 将数字添加到新元素中
+    $('#info').html(
+        '[debug info]<br>' + 
+        'Window Width: ' + windowWidth + ', Window Height: ' + windowHeight + '<br>' +
+        'Width: ' + width + ', Height: ' + height + '<br>' +
+        'Outer Width: ' + outerWidth + ', Outer Height: ' + outerHeight
+    );
+
     ratio = window.innerWidth / window.innerHeight;
     console.log(`device ratio: ${ratio}`);
     if (ratio >= 0.45036 && ratio <= 0.57143) {
